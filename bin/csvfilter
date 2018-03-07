@@ -19,7 +19,7 @@ def get_files(options, args):
 
 
 def get_processor(options, args):
-    fields = map(int, options.fields.split(',')) if options.fields else None
+    fields = list(map(int, options.fields.split(','))) if options.fields else None
     return Processor(fields=fields,
                      skip=options.skip,
                      delimiter=options.delimiter,
